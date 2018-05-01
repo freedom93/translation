@@ -260,7 +260,142 @@
                                 <h1 id="shape-outside">shape-outside</h1>
 <p>2017&#x5E74;8&#x6708;19&#x65E5;,&#x7531;ROBIN RENDLE&#x6700;&#x540E;&#x66F4;&#x65B0; <a href="https://css-tricks.com/almanac/properties/s/shape-outside/" target="_blank">&#x539F;&#x6587;&#x5730;&#x5740;</a></p>
 <p>&#x6807;&#x7B7E;&#xFF1A;BASE-SHAPE&#x3001;SHAPE-OUTSIDE</p>
-<p><a href="https://css-tricks.com/almanac/properties/s/shape-outside/" target="_blank">&#x539F;&#x6587;&#x5730;&#x5740;</a></p>
+<p>The shape-outside property controls how content will wrap around a floated element&#x2019;s bounding-box. Typically this is so that text can reflow over a shape such as a circle, ellipse or a polygon:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">circle</span>(50%);
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+}
+</code></pre>
+<figure id="post-203845" class="align-none media-203845"><img sizes="(min-width: 1850px) calc( (100vw - 555px) / 3 )
+       (min-width: 1251px) calc( (100vw - 530px) / 2 )
+       (min-width: 1086px) calc(100vw - 480px)
+       (min-width: 626px)  calc(100vw - 335px)
+                           calc(100vw - 30px)" srcset="https://cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside.png 1550w, https://cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside-300x135.png 300w, https://cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside-1024x460.png 1024w" src="../../cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside.png" alt=""></figure>
+
+<p>It&#x2019;s important to note that this property will only work on floated elements for now, although this is likely to change in the future. The <code>shape-outside</code> property can also be manipulated with [transitions or animations].</p>
+<h1 id="values">Values</h1>
+<ul>
+    <li><code>circle()</code>: for making circular shapes.</li> 
+    <li><code>ellipse()</code>: for making elliptical shapes.</li> 
+    <li><code>inset()</code>: for making rectangular shapes.</li> 
+    <li><code>polygon()</code>: for creating any shape with 3 or more vertices.</li> 
+    <li><code>url()</code>: identifies which image should be used to wrap text around.</li> 
+    <li><code>initial</code>: the float area is unaffected.</li> 
+    <li><code>inherit</code>: inherits <code>shape-outside</code> value from parent.</li> 
+</ul>
+
+<p>The following values identify which reference of [the box model] should be used for positioning the shape within:</p>
+<ul>
+    <li><code>margin-box</code></li>
+    <li><code>padding-box</code></li>
+    <li><code>border-box</code></li>
+</ul>
+
+<p>These values should be appended to the end, for instance: <code>shape-outside</code>: <code>circle(50% at 0 0) padding-box</code>. By default the <code>margin-box</code> reference will be used.</p>
+<h1 id="ellipse">ellipse()</h1>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">ellipse</span>(150px 300px at 50% 50%);
+}
+</code></pre>
+<p>The <code>ellipse()</code> function requires the radii values for the x, y axis of the ellipse followed by the coordinates to position the center of the shape within its bounding box. For instance the example above will position the center of the ellipse in the vertical and horizontal center of the <code>.element</code> div:</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_7fa99015d63597648d5e312c5b73ac25" src="//codepen.io/css-tricks/embed/7fa99015d63597648d5e312c5b73ac25?height=268&amp;theme-id=1&amp;slug-hash=7fa99015d63597648d5e312c5b73ac25&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 6" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<p>Although the demo above may suggest that we&#x2019;re changing the shape of the <code>div</code> itself, if we add borders and a background-image we&#x2019;ll find that the bounding box is in fact still rectangular:</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_5e47a80626dfa27a42dd18a0e2b8450b" src="//codepen.io/css-tricks/embed/5e47a80626dfa27a42dd18a0e2b8450b?height=268&amp;theme-id=1&amp;slug-hash=5e47a80626dfa27a42dd18a0e2b8450b&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 5" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<p>It might be better to think of it this way: with the <code>shape-outside</code> property we&#x2019;re changing the relationship of other elements around an element, not the geometry of the element itself. To fix that we&#x2019;ll need to use <code>shape-outside</code> alongside the <code>clip-path()</code> property, such as in this example:</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_4e5420d8c1a2766b25dd3c98f684bf9c" src="//codepen.io/css-tricks/embed/4e5420d8c1a2766b25dd3c98f684bf9c?height=268&amp;theme-id=1&amp;slug-hash=4e5420d8c1a2766b25dd3c98f684bf9c&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 4" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<h1 id="circle">circle()</h1>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">circle</span>(50%);
+}
+</code></pre>
+<p>This function creates a circle, and in the code example above it will create a circle with a radius that is half the height and width of <code>.element</code>. The <code>circle()</code> function can also use the same syntax for positioning the shape within.</p>
+<h1 id="url">url()</h1>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&apos;circle.png&apos;</span>);
+}
+</code></pre>
+<p>In this instance, we have two floated images, one on either side of a block of text. Since both images have the <code>shape-outside</code> property set then the text beneath will avoid those two floats.</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_fbe5379f499f072e55fa1e4fbab5c8d5" src="//codepen.io/css-tricks/embed/fbe5379f499f072e55fa1e4fbab5c8d5?height=268&amp;theme-id=1&amp;slug-hash=fbe5379f499f072e55fa1e4fbab5c8d5&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 3" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<p>It&#x2019;s also possible to set the <code>shape-image-threshold</code> property which will inform the browser which pixels, depending on their transparency, should create the shape. For example:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&apos;image.png&apos;</span>);
+  <span class="hljs-attribute">shape-image-threshold</span>: <span class="hljs-number">0.5</span>;
+}
+</code></pre>
+<p>In this example the only pixels that will create the shape must have 50% transparency and above. Values from <code>0.0</code> (transparent) to <code>1.0</code> (opaque) are valid.</p>
+<h1 id="polygon">polygon()</h1>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">polygon</span>(0 0, 0 200px, 300px 600px);
+}
+</code></pre>
+<p>This function creates any shape that has three or more vertices, for example:</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_4e5420d8c1a2766b25dd3c98f684bf9c" src="//codepen.io/css-tricks/embed/4e5420d8c1a2766b25dd3c98f684bf9c?height=268&amp;theme-id=1&amp;slug-hash=4e5420d8c1a2766b25dd3c98f684bf9c&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 4" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<p>It&#x2019;s important to note that if this property is going to be animated it requires the same number of vertices when you declare the animated state:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">polygon</span>(0 0, 100% 0, 100% 100%, 0 100%);
+  <span class="hljs-attribute">transition</span>: shape-outside <span class="hljs-number">1s</span>;
+}
+<span class="hljs-selector-class">.element</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">polygon</span>(0 0, 100% 50%, 100% 50%, 0 100%);
+}
+</code></pre>
+<h1 id="inset">inset()</h1>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">inset</span>(100px 100px 100px 100px 10px);
+  <span class="hljs-comment">/* shape-outside: inset(top right bottom left border-radius); */</span>
+}
+</code></pre>
+<p><code>inset()</code> is a function for making rectangular shapes, it takes five parameters but the fifth, for <code>border-radius</code> is optional. The other arguments are offsets inwards from edge of <code>.element</code>:</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_b2da5018d8f20ac3a2ccc26edb724db6" src="//codepen.io/css-tricks/embed/b2da5018d8f20ac3a2ccc26edb724db6?height=268&amp;theme-id=1&amp;slug-hash=b2da5018d8f20ac3a2ccc26edb724db6&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 1" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<p>Above we have an element that is 200px wide by 200px tall and we&#x2019;re offsetting the shape within to 50px in every direction except the left side. This way the text will wrap above the shape even though the div extends to the top.</p>
+<h1 id="related-properties">Related properties</h1>
+<ul>
+    <li>[clip-path]()</li>
+</ul>
+
+<h1 id="other-resoutces">Other resoutces</h1>
+<ul>
+    <li>[CSS Shapes on W3C]()</li>
+    <li>[shape-outside on MDN]()</li>
+    <li>[Getting started with CSS Shapes]()</li>
+    <li>[CSS Shapes on A List Apart]()</li>
+</ul>
+
+<h1 id="browser-support">Browser support</h1>
+<p>This browser support data is from <a href="http://caniuse.com/#feat=css-shapes" target="_blank">Caniuse</a>, which has more detail. A number indicates that browser supports the feature at that version and up.</p>
+<div class="caniuse"><div class="caniuse-header"><h4 id="article-header-id-9" class="has-header-link"><a class="article-headline-link" href="#article-header-id-9">#</a>Desktop</h4><table class="browser-support-table"><thead><tr><th class="chrome"><span>Chrome</span></th><th class="opera"><span>Opera</span></th><th class="firefox"><span>Firefox</span></th><th class="ie"><span>IE</span></th><th class="edge"><span>Edge</span></th><th class="safari"><span>Safari</span></th></tr></thead><tbody><tr><td class="y yep" title="Chrome - " data-browser-name="Chrome"><span class="caniuse-agents-version version">37</span></td><td class="y yep" title="Opera - " data-browser-name="Opera"><span class="caniuse-agents-version version">24</span></td><td class="n nope" title="Firefox - " data-browser-name="Firefox"><span class="caniuse-agents-version version">No</span></td><td class="n nope" title="IE - " data-browser-name="IE"><span class="caniuse-agents-version version">No</span></td><td class="n nope" title="Edge - " data-browser-name="Edge"><span class="caniuse-agents-version version">No</span></td><td class="y yep" title="Safari - " data-browser-name="Safari"><span class="caniuse-agents-version version">7.1*</span></td></tr></tbody></table></div><div class="caniuse-section"><h4 id="article-header-id-10" class="has-header-link"><a class="article-headline-link" href="#article-header-id-10">#</a>Mobile / Tablet</h4><table class="browser-support-table"><thead><tr><th class="ios_saf"><span>iOS Safari</span></th><th class="op_mob"><span>Opera Mobile</span></th><th class="op_mini"><span>Opera Mini</span></th><th class="android"><span>Android</span></th><th class="and_chr"><span>Android Chrome</span></th><th class="and_ff"><span>Android Firefox</span></th></tr></thead><tbody><tr><td class="y yep" title="iOS Safari - " data-browser-name="iOS Safari"><span class="caniuse-agents-version version">8*</span></td><td class="y yep" title="Opera Mobile - " data-browser-name="Opera Mobile"><span class="caniuse-agents-version version">37</span></td><td class="n nope" title="Opera Mini - " data-browser-name="Opera Mini"><span class="caniuse-agents-version version">No</span></td><td class="y yep" title="Android - " data-browser-name="Android"><span class="caniuse-agents-version version">62</span></td><td class="y yep" title="Android Chrome - " data-browser-name="Android Chrome"><span class="caniuse-agents-version version">64</span></td><td class="n nope" title="Android Firefox - " data-browser-name="Android Firefox"><span class="caniuse-agents-version version">No</span></td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
 
                                 
                                 </section>
@@ -304,7 +439,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.2 CSS属性：shape-outside","level":"1.2.3","depth":2,"next":{"title":"1.2 shape-outside","level":"1.2.4","depth":2,"path":"CSS-TRICKS/1.2/es.md","ref":"CSS-TRICKS/1.2/es.md","articles":[]},"previous":{"title":"1.1 Iron Man’s Arc Reactor Using CSS3 Transforms and Animations","level":"1.2.2","depth":2,"path":"CSS-TRICKS/1.1/es.md","ref":"CSS-TRICKS/1.1/es.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CSS-TRICKS/1.2/ch.md","mtime":"2018-04-28T16:19:24.990Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-28T15:24:34.576Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.2 CSS属性：shape-outside","level":"1.2.3","depth":2,"next":{"title":"1.2 shape-outside","level":"1.2.4","depth":2,"path":"CSS-TRICKS/1.2/es.md","ref":"CSS-TRICKS/1.2/es.md","articles":[]},"previous":{"title":"1.1 Iron Man’s Arc Reactor Using CSS3 Transforms and Animations","level":"1.2.2","depth":2,"path":"CSS-TRICKS/1.1/es.md","ref":"CSS-TRICKS/1.1/es.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CSS-TRICKS/1.2/ch.md","mtime":"2018-05-01T03:13:46.272Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-01T02:07:06.914Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
