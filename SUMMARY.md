@@ -1,6 +1,6 @@
 # Summary
 
-* [translation](README.md)
+* [FE translation](README.md)
 
 * [1.CSS-TRICKS](CSS-TRICKS/README.md)
   * [1.1 使用CSS变换和动画实现钢铁侠电弧反应堆](CSS-TRICKS/1.1/ch.md)
