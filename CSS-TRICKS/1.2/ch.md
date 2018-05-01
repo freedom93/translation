@@ -4,7 +4,8 @@
 
 标签：BASE-SHAPE、SHAPE-OUTSIDE
 
-The shape-outside property controls how content will wrap around a floated element’s bounding-box. Typically this is so that text can reflow over a shape such as a circle, ellipse or a polygon:
+shape-outside属性控制内容将环绕一个浮动元素的限定框。通常这样文本可以回流形状成一个圆,椭圆或一个多边形:
+
 
 ```css
 .element {
@@ -20,20 +21,20 @@ The shape-outside property controls how content will wrap around a floated eleme
        (min-width: 626px)  calc(100vw - 335px)
                            calc(100vw - 30px)" srcset="https://cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside.png 1550w, https://cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside-300x135.png 300w, https://cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside-1024x460.png 1024w" src="//cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside.png" alt=""></figure>
 
-It’s important to note that this property will only work on floated elements for now, although this is likely to change in the future. The ```shape-outside``` property can also be manipulated with [transitions or animations].
+重要的是，要注意这个属性只能在浮动元素中生效,尽管未来可能会改变。```shape-outside```属性也可以处理[transitions or animations](http://codepen.io/robinrendle/pen/4275e31f9e95882054d400741b010dc6?editors=110)。
 
 # Values
 <ul>
-	<li><code>circle()</code>: for making circular shapes.</li> 
-    <li><code>ellipse()</code>: for making elliptical shapes.</li> 
-    <li><code>inset()</code>: for making rectangular shapes.</li> 
-    <li><code>polygon()</code>: for creating any shape with 3 or more vertices.</li> 
-    <li><code>url()</code>: identifies which image should be used to wrap text around.</li> 
-    <li><code>initial</code>: the float area is unaffected.</li> 
-    <li><code>inherit</code>: inherits <code>shape-outside</code> value from parent.</li> 
+	<li><code>circle()</code>: 绘制圆形</li> 
+    <li><code>ellipse()</code>: 绘制椭圆形</li> 
+    <li><code>inset()</code>: 绘制方形</li> 
+    <li><code>polygon()</code>: 绘制多边形</li> 
+    <li><code>url()</code>: 制定文字环绕的图像路径</li> 
+    <li><code>initial</code>: 默认值（？？the float area is unaffected.）</li> 
+    <li><code>inherit</code>: 可以继承父标签的<code>shape-outside</code> 属性值</li> 
 </ul>
 
-The following values identify which reference of [the box model] should be used for positioning the shape within:
+以下[盒模型](https://css-tricks.com/the-css-box-model)的参考值应该用于定位形状:
 
 <ul>
 	<li><code>margin-box</code></li>
@@ -41,7 +42,7 @@ The following values identify which reference of [the box model] should be used 
     <li><code>border-box</code></li>
 </ul>
 
-These values should be appended to the end, for instance: ```shape-outside```: ```circle(50% at 0 0) padding-box```. By default the ```margin-box``` reference will be used.
+这些值应该附加到最后,例如:```shape-outside```: ```circle(50% at 0 0) padding-box```。默认使用 ```margin-box```。
 
 # ellipse()
 
@@ -51,19 +52,19 @@ These values should be appended to the end, for instance: ```shape-outside```: `
 }
 ```
 
-The ```ellipse()``` function requires the radii values for the x, y axis of the ellipse followed by the coordinates to position the center of the shape within its bounding box. For instance the example above will position the center of the ellipse in the vertical and horizontal center of the ```.element``` div:
+<code>ellipse()</code>函数要求形状的半径值x,y轴的椭圆坐标位置在其边界框的中心。例如上面的示例将椭圆的中心位置在垂直和水平方向在```.element```div的中心:
 
 <div class="cp_embed_wrapper resizable" style="height: 268px;">
 <iframe id="cp_embed_7fa99015d63597648d5e312c5b73ac25" src="//codepen.io/css-tricks/embed/7fa99015d63597648d5e312c5b73ac25?height=268&amp;theme-id=1&amp;slug-hash=7fa99015d63597648d5e312c5b73ac25&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 6" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
 </div>
 
-Although the demo above may suggest that we’re changing the shape of the ```div``` itself, if we add borders and a background-image we’ll find that the bounding box is in fact still rectangular:
+上述演示显示我们正在改变```div```的形状，但是如果我们添加边框和背景图像,我们会发现这个边界框实际上仍然矩形:
 
 <div class="cp_embed_wrapper resizable" style="height: 268px;">
 <iframe id="cp_embed_5e47a80626dfa27a42dd18a0e2b8450b" src="//codepen.io/css-tricks/embed/5e47a80626dfa27a42dd18a0e2b8450b?height=268&amp;theme-id=1&amp;slug-hash=5e47a80626dfa27a42dd18a0e2b8450b&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 5" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
 </div>
 
-It might be better to think of it this way: with the ```shape-outside``` property we’re changing the relationship of other elements around an element, not the geometry of the element itself. To fix that we’ll need to use ```shape-outside``` alongside the ```clip-path()``` property, such as in this example:
+这样想可能更好:```shape-outside```属性改变元素与周围的其他元素之间的关系,而不是几何元素的本身。我们需要使用 ```shape-outside```与```clip-path()```属性修正它,比如在这个例子中:
 
 <div class="cp_embed_wrapper resizable" style="height: 268px;">
 <iframe id="cp_embed_4e5420d8c1a2766b25dd3c98f684bf9c" src="//codepen.io/css-tricks/embed/4e5420d8c1a2766b25dd3c98f684bf9c?height=268&amp;theme-id=1&amp;slug-hash=4e5420d8c1a2766b25dd3c98f684bf9c&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 4" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
@@ -76,7 +77,8 @@ It might be better to think of it this way: with the ```shape-outside``` propert
   shape-outside: circle(50%);
 }
 ```
-This function creates a circle, and in the code example above it will create a circle with a radius that is half the height and width of ```.element```. The ```circle()``` function can also use the same syntax for positioning the shape within.
+
+这个函数创建一个圆,在上面的代码示例中,将创建一个半径是```.element```一半高度和宽度的圆。```circle()```函数也可以使用相同的语法在内部定位形状。
 
 # url()
 
@@ -85,13 +87,14 @@ This function creates a circle, and in the code example above it will create a c
   shape-outside: url('circle.png');
 }
 ```
-In this instance, we have two floated images, one on either side of a block of text. Since both images have the ```shape-outside``` property set then the text beneath will avoid those two floats.
+
+在这个例子中,我们有两个浮动图像,每个边上有一个文本块。因为两张图片设置了```shape-outside```属性，然后下面的文本就会避免浮动。
 
 <div class="cp_embed_wrapper resizable" style="height: 268px;">
 <iframe id="cp_embed_fbe5379f499f072e55fa1e4fbab5c8d5" src="//codepen.io/css-tricks/embed/fbe5379f499f072e55fa1e4fbab5c8d5?height=268&amp;theme-id=1&amp;slug-hash=fbe5379f499f072e55fa1e4fbab5c8d5&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 3" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
 </div>
 
-It’s also possible to set the ```shape-image-threshold``` property which will inform the browser which pixels, depending on their transparency, should create the shape. For example:
+也可以设置```shape-image-threshold```属性告诉浏览器一个图片的像素阀值,浏览器根据其透明度创建一个形状。例如:
 
 ```css
 .element {
@@ -100,7 +103,7 @@ It’s also possible to set the ```shape-image-threshold``` property which will 
 }
 ```
 
-In this example the only pixels that will create the shape must have 50% transparency and above. Values from ```0.0``` (transparent) to ```1.0``` (opaque) are valid.
+在这个例子中根据唯一的像素阀值,创建上面的形状将会有50%的透明度。```shape-image-threshold```属性的值```0.0```(透明)到```1.0``(不透明)都是有效的。
 
 # polygon()
 
@@ -109,13 +112,14 @@ In this example the only pixels that will create the shape must have 50% transpa
   shape-outside: polygon(0 0, 0 200px, 300px 600px);
 }
 ```
-This function creates any shape that has three or more vertices, for example:
+
+这个函数创建任何有三个或三个以上顶点的形状,例如:
 
 <div class="cp_embed_wrapper resizable" style="height: 268px;">
 <iframe id="cp_embed_4e5420d8c1a2766b25dd3c98f684bf9c" src="//codepen.io/css-tricks/embed/4e5420d8c1a2766b25dd3c98f684bf9c?height=268&amp;theme-id=1&amp;slug-hash=4e5420d8c1a2766b25dd3c98f684bf9c&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 4" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
 </div>
 
-It’s important to note that if this property is going to be animated it requires the same number of vertices when you declare the animated state:
+需要注意的是,如果这个属性将是动画，当你声明动画状态时需要相同数量的顶点:
 
 ```css
 .element {
@@ -135,29 +139,31 @@ It’s important to note that if this property is going to be animated it requir
   /* shape-outside: inset(top right bottom left border-radius); */
 }
 ```
-```inset()``` is a function for making rectangular shapes, it takes five parameters but the fifth, for ```border-radius``` is optional. The other arguments are offsets inwards from edge of ```.element```:
+
+```inset()```是一个绘制方形形状的函数,它需要五个参数,但第五参数,```border-radius``` 是可选的。其他参数偏移量从 ```.element```的边缘向内:
 
 <div class="cp_embed_wrapper resizable" style="height: 268px;">
 <iframe id="cp_embed_b2da5018d8f20ac3a2ccc26edb724db6" src="//codepen.io/css-tricks/embed/b2da5018d8f20ac3a2ccc26edb724db6?height=268&amp;theme-id=1&amp;slug-hash=b2da5018d8f20ac3a2ccc26edb724db6&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 1" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
 </div>
 
-Above we have an element that is 200px wide by 200px tall and we’re offsetting the shape within to 50px in every direction except the left side. This way the text will wrap above the shape even though the div extends to the top.
+上面有一个200px宽、200px高的元素,除了左边，我们在其他各个方向偏移50px。这种方式div虽然延伸到顶部,但上面的文本将围绕形状。
 
 # Related properties
 <ul>
-	<li>[clip-path]()</li>
+ <li><a href="https://css-tricks.com/almanac/properties/c/clip/">clip-path</a></li>
 </ul>
 
 # Other resoutces
 <ul>
-	<li>[CSS Shapes on W3C]()</li>
-	<li>[shape-outside on MDN]()</li>
-	<li>[Getting started with CSS Shapes]()</li>
-	<li>[CSS Shapes on A List Apart]()</li>
+ <li><a href="http://www.w3.org/TR/css-shapes/#funcdef-ellipse">CSS Shapes on W3C</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside">shape-outside on MDN</a></li>
+ <li><a href="http://www.html5rocks.com/en/tutorials/shapes/getting-started">Getting started with CSS Shapes</a></li>
+ <li><a href="http://alistapart.com/article/css-shapes-101">CSS Shapes on A List Apart</a></li>
 </ul>
 
 # Browser support
-This browser support data is from [Caniuse](http://caniuse.com/#feat=css-shapes), which has more detail. A number indicates that browser supports the feature at that version and up.
+
+浏览器支持数据来自[Caniuse](http://caniuse.com/#feat=css-shapes),那里有更多的细节。以下数据表明浏览器支持,版本和特性。
 
 <div class="caniuse"><div class="caniuse-header"><h4 id="article-header-id-9" class="has-header-link"><a class="article-headline-link" href="#article-header-id-9">#</a>Desktop</h4><table class="browser-support-table"><thead><tr><th class="chrome"><span>Chrome</span></th><th class="opera"><span>Opera</span></th><th class="firefox"><span>Firefox</span></th><th class="ie"><span>IE</span></th><th class="edge"><span>Edge</span></th><th class="safari"><span>Safari</span></th></tr></thead><tbody><tr><td class="y yep" title="Chrome - " data-browser-name="Chrome"><span class="caniuse-agents-version version">37</span></td><td class="y yep" title="Opera - " data-browser-name="Opera"><span class="caniuse-agents-version version">24</span></td><td class="n nope" title="Firefox - " data-browser-name="Firefox"><span class="caniuse-agents-version version">No</span></td><td class="n nope" title="IE - " data-browser-name="IE"><span class="caniuse-agents-version version">No</span></td><td class="n nope" title="Edge - " data-browser-name="Edge"><span class="caniuse-agents-version version">No</span></td><td class="y yep" title="Safari - " data-browser-name="Safari"><span class="caniuse-agents-version version">7.1*</span></td></tr></tbody></table></div><div class="caniuse-section"><h4 id="article-header-id-10" class="has-header-link"><a class="article-headline-link" href="#article-header-id-10">#</a>Mobile / Tablet</h4><table class="browser-support-table"><thead><tr><th class="ios_saf"><span>iOS Safari</span></th><th class="op_mob"><span>Opera Mobile</span></th><th class="op_mini"><span>Opera Mini</span></th><th class="android"><span>Android</span></th><th class="and_chr"><span>Android Chrome</span></th><th class="and_ff"><span>Android Firefox</span></th></tr></thead><tbody><tr><td class="y yep" title="iOS Safari - " data-browser-name="iOS Safari"><span class="caniuse-agents-version version">8*</span></td><td class="y yep" title="Opera Mobile - " data-browser-name="Opera Mobile"><span class="caniuse-agents-version version">37</span></td><td class="n nope" title="Opera Mini - " data-browser-name="Opera Mini"><span class="caniuse-agents-version version">No</span></td><td class="y yep" title="Android - " data-browser-name="Android"><span class="caniuse-agents-version version">62</span></td><td class="y yep" title="Android Chrome - " data-browser-name="Android Chrome"><span class="caniuse-agents-version version">64</span></td><td class="n nope" title="Android Firefox - " data-browser-name="Android Firefox"><span class="caniuse-agents-version version">No</span></td></tr></tbody></table></div></div>
 
