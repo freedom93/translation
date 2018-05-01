@@ -1,4 +1,4 @@
-# FE Translation
+# The translation of [freedom](https://github.com/freedom93)
 
 ### Translate some articles about CSS, JavaScript and HTML.
 
