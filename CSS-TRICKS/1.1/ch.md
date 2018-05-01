@@ -1,6 +1,8 @@
 # 使用CSS变换和动画实现钢铁侠电弧反应堆
 
-Kunal Sarkar 2018.4.2  动画 变换 [原文地址](https://css-tricks.com/iron-mans-arc-reactor-using-css3-transforms-and-animations/)
+Kunal Sarkar 2018.4.2 [原文地址](https://css-tricks.com/iron-mans-arc-reactor-using-css3-transforms-and-animations/)
+
+标签：动画 变换
 
 钢铁侠粉丝们好，启动你的代码编辑！ 我们将使用CSS实现钢铁侠套装的弧形反应堆。 以下是最终结果的样子：
 

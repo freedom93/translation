@@ -1,0 +1,482 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.2 CSS属性：shape-outside · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="es.html" />
+    
+    
+    <link rel="prev" href="../1.1/es.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    translation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    1.CSS-TRICKS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../1.1/ch.html">
+            
+                <a href="../1.1/ch.html">
+            
+                    
+                    1.1 使用CSS变换和动画实现钢铁侠电弧反应堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../1.1/es.html">
+            
+                <a href="../1.1/es.html">
+            
+                    
+                    1.1 Iron Man’s Arc Reactor Using CSS3 Transforms and Animations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="ch.html">
+            
+                <a href="ch.html">
+            
+                    
+                    1.2 CSS属性：shape-outside
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="es.html">
+            
+                <a href="es.html">
+            
+                    
+                    1.2 shape-outside
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../JS-TRICKS/">
+            
+                <a href="../../JS-TRICKS/">
+            
+                    
+                    2.JS-TRICKS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../HTML-TRICKS/">
+            
+                <a href="../../HTML-TRICKS/">
+            
+                    
+                    3.HTML-TRICKS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../OTHER/">
+            
+                <a href="../../OTHER/">
+            
+                    
+                    4.OTHER
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.2 CSS属性：shape-outside</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="shape-outside">shape-outside</h1>
+<p>2017&#x5E74;8&#x6708;19&#x65E5;,&#x7531;ROBIN RENDLE&#x6700;&#x540E;&#x66F4;&#x65B0; <a href="https://css-tricks.com/almanac/properties/s/shape-outside/" target="_blank">&#x539F;&#x6587;&#x5730;&#x5740;</a></p>
+<p>&#x6807;&#x7B7E;&#xFF1A;BASE-SHAPE&#x3001;SHAPE-OUTSIDE</p>
+<p>shape-outside&#x5C5E;&#x6027;&#x63A7;&#x5236;&#x5185;&#x5BB9;&#x5C06;&#x73AF;&#x7ED5;&#x4E00;&#x4E2A;&#x6D6E;&#x52A8;&#x5143;&#x7D20;&#x7684;&#x9650;&#x5B9A;&#x6846;&#x3002;&#x901A;&#x5E38;&#x8FD9;&#x6837;&#x6587;&#x672C;&#x53EF;&#x4EE5;&#x56DE;&#x6D41;&#x5F62;&#x72B6;&#x6210;&#x4E00;&#x4E2A;&#x5706;,&#x692D;&#x5706;&#x6216;&#x4E00;&#x4E2A;&#x591A;&#x8FB9;&#x5F62;:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">float</span>: left;
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">circle</span>(50%);
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+}
+</code></pre>
+<figure id="post-203845" class="align-none media-203845"><img sizes="(min-width: 1850px) calc( (100vw - 555px) / 3 )
+       (min-width: 1251px) calc( (100vw - 530px) / 2 )
+       (min-width: 1086px) calc(100vw - 480px)
+       (min-width: 626px)  calc(100vw - 335px)
+                           calc(100vw - 30px)" srcset="https://cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside.png 1550w, https://cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside-300x135.png 300w, https://cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside-1024x460.png 1024w" src="../../cdn.css-tricks.com/wp-content/uploads/2015/06/shape-outside.png" alt=""></figure>
+
+<p>&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x8981;&#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x53EA;&#x80FD;&#x5728;&#x6D6E;&#x52A8;&#x5143;&#x7D20;&#x4E2D;&#x751F;&#x6548;,&#x5C3D;&#x7BA1;&#x672A;&#x6765;&#x53EF;&#x80FD;&#x4F1A;&#x6539;&#x53D8;&#x3002;<code>shape-outside</code>&#x5C5E;&#x6027;&#x4E5F;&#x53EF;&#x4EE5;&#x5904;&#x7406;<a href="http://codepen.io/robinrendle/pen/4275e31f9e95882054d400741b010dc6?editors=110" target="_blank">transitions or animations</a>&#x3002;</p>
+<h1 id="values">Values</h1>
+<ul>
+    <li><code>circle()</code>: &#x7ED8;&#x5236;&#x5706;&#x5F62;</li> 
+    <li><code>ellipse()</code>: &#x7ED8;&#x5236;&#x692D;&#x5706;&#x5F62;</li> 
+    <li><code>inset()</code>: &#x7ED8;&#x5236;&#x65B9;&#x5F62;</li> 
+    <li><code>polygon()</code>: &#x7ED8;&#x5236;&#x591A;&#x8FB9;&#x5F62;</li> 
+    <li><code>url()</code>: &#x5236;&#x5B9A;&#x6587;&#x5B57;&#x73AF;&#x7ED5;&#x7684;&#x56FE;&#x50CF;&#x8DEF;&#x5F84;</li> 
+    <li><code>initial</code>: &#x9ED8;&#x8BA4;&#x503C;&#xFF08;&#xFF1F;&#xFF1F;the float area is unaffected.&#xFF09;</li> 
+    <li><code>inherit</code>: &#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x7236;&#x6807;&#x7B7E;&#x7684;<code>shape-outside</code> &#x5C5E;&#x6027;&#x503C;</li> 
+</ul>
+
+<p>&#x4EE5;&#x4E0B;<a href="https://css-tricks.com/the-css-box-model" target="_blank">&#x76D2;&#x6A21;&#x578B;</a>&#x7684;&#x53C2;&#x8003;&#x503C;&#x5E94;&#x8BE5;&#x7528;&#x4E8E;&#x5B9A;&#x4F4D;&#x5F62;&#x72B6;:</p>
+<ul>
+    <li><code>margin-box</code></li>
+    <li><code>padding-box</code></li>
+    <li><code>border-box</code></li>
+</ul>
+
+<p>&#x8FD9;&#x4E9B;&#x503C;&#x5E94;&#x8BE5;&#x9644;&#x52A0;&#x5230;&#x6700;&#x540E;,&#x4F8B;&#x5982;:<code>shape-outside</code>: <code>circle(50% at 0 0) padding-box</code>&#x3002;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528; <code>margin-box</code>&#x3002;</p>
+<h1 id="ellipse">ellipse()</h1>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">ellipse</span>(150px 300px at 50% 50%);
+}
+</code></pre>
+<p><code>ellipse()</code>&#x51FD;&#x6570;&#x8981;&#x6C42;&#x5F62;&#x72B6;&#x7684;&#x534A;&#x5F84;&#x503C;x,y&#x8F74;&#x7684;&#x692D;&#x5706;&#x5750;&#x6807;&#x4F4D;&#x7F6E;&#x5728;&#x5176;&#x8FB9;&#x754C;&#x6846;&#x7684;&#x4E2D;&#x5FC3;&#x3002;&#x4F8B;&#x5982;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x5C06;&#x692D;&#x5706;&#x7684;&#x4E2D;&#x5FC3;&#x4F4D;&#x7F6E;&#x5728;&#x5782;&#x76F4;&#x548C;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#x5728;<code>.element</code>div&#x7684;&#x4E2D;&#x5FC3;:</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_7fa99015d63597648d5e312c5b73ac25" src="//codepen.io/css-tricks/embed/7fa99015d63597648d5e312c5b73ac25?height=268&amp;theme-id=1&amp;slug-hash=7fa99015d63597648d5e312c5b73ac25&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 6" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<p>&#x4E0A;&#x8FF0;&#x6F14;&#x793A;&#x663E;&#x793A;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x6539;&#x53D8;<code>div</code>&#x7684;&#x5F62;&#x72B6;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;&#x8FB9;&#x6846;&#x548C;&#x80CC;&#x666F;&#x56FE;&#x50CF;,&#x6211;&#x4EEC;&#x4F1A;&#x53D1;&#x73B0;&#x8FD9;&#x4E2A;&#x8FB9;&#x754C;&#x6846;&#x5B9E;&#x9645;&#x4E0A;&#x4ECD;&#x7136;&#x77E9;&#x5F62;:</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_5e47a80626dfa27a42dd18a0e2b8450b" src="//codepen.io/css-tricks/embed/5e47a80626dfa27a42dd18a0e2b8450b?height=268&amp;theme-id=1&amp;slug-hash=5e47a80626dfa27a42dd18a0e2b8450b&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 5" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<p>&#x8FD9;&#x6837;&#x60F3;&#x53EF;&#x80FD;&#x66F4;&#x597D;:<code>shape-outside</code>&#x5C5E;&#x6027;&#x6539;&#x53D8;&#x5143;&#x7D20;&#x4E0E;&#x5468;&#x56F4;&#x7684;&#x5176;&#x4ED6;&#x5143;&#x7D20;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;,&#x800C;&#x4E0D;&#x662F;&#x51E0;&#x4F55;&#x5143;&#x7D20;&#x7684;&#x672C;&#x8EAB;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528; <code>shape-outside</code>&#x4E0E;<code>clip-path()</code>&#x5C5E;&#x6027;&#x4FEE;&#x6B63;&#x5B83;,&#x6BD4;&#x5982;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;:</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_4e5420d8c1a2766b25dd3c98f684bf9c" src="//codepen.io/css-tricks/embed/4e5420d8c1a2766b25dd3c98f684bf9c?height=268&amp;theme-id=1&amp;slug-hash=4e5420d8c1a2766b25dd3c98f684bf9c&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 4" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<h1 id="circle">circle()</h1>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">circle</span>(50%);
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5706;,&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#x4E2D;,&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x534A;&#x5F84;&#x662F;<code>.element</code>&#x4E00;&#x534A;&#x9AD8;&#x5EA6;&#x548C;&#x5BBD;&#x5EA6;&#x7684;&#x5706;&#x3002;<code>circle()</code>&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x8BED;&#x6CD5;&#x5728;&#x5185;&#x90E8;&#x5B9A;&#x4F4D;&#x5F62;&#x72B6;&#x3002;</p>
+<h1 id="url">url()</h1>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&apos;circle.png&apos;</span>);
+}
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;,&#x6211;&#x4EEC;&#x6709;&#x4E24;&#x4E2A;&#x6D6E;&#x52A8;&#x56FE;&#x50CF;,&#x6BCF;&#x4E2A;&#x8FB9;&#x4E0A;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x5757;&#x3002;&#x56E0;&#x4E3A;&#x4E24;&#x5F20;&#x56FE;&#x7247;&#x8BBE;&#x7F6E;&#x4E86;<code>shape-outside</code>&#x5C5E;&#x6027;&#xFF0C;&#x7136;&#x540E;&#x4E0B;&#x9762;&#x7684;&#x6587;&#x672C;&#x5C31;&#x4F1A;&#x907F;&#x514D;&#x6D6E;&#x52A8;&#x3002;</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_fbe5379f499f072e55fa1e4fbab5c8d5" src="//codepen.io/css-tricks/embed/fbe5379f499f072e55fa1e4fbab5c8d5?height=268&amp;theme-id=1&amp;slug-hash=fbe5379f499f072e55fa1e4fbab5c8d5&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 3" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;<code>shape-image-threshold</code>&#x5C5E;&#x6027;&#x544A;&#x8BC9;&#x6D4F;&#x89C8;&#x5668;&#x4E00;&#x4E2A;&#x56FE;&#x7247;&#x7684;&#x50CF;&#x7D20;&#x9600;&#x503C;,&#x6D4F;&#x89C8;&#x5668;&#x6839;&#x636E;&#x5176;&#x900F;&#x660E;&#x5EA6;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5F62;&#x72B6;&#x3002;&#x4F8B;&#x5982;:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&apos;image.png&apos;</span>);
+  <span class="hljs-attribute">shape-image-threshold</span>: <span class="hljs-number">0.5</span>;
+}
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x6839;&#x636E;&#x552F;&#x4E00;&#x7684;&#x50CF;&#x7D20;&#x9600;&#x503C;,&#x521B;&#x5EFA;&#x4E0A;&#x9762;&#x7684;&#x5F62;&#x72B6;&#x5C06;&#x4F1A;&#x6709;50%&#x7684;&#x900F;&#x660E;&#x5EA6;&#x3002;<code>shape-image-threshold</code>&#x5C5E;&#x6027;&#x7684;&#x503C;<code>0.0</code>(&#x900F;&#x660E;)&#x5230;<code>`1.0</code>(&#x4E0D;&#x900F;&#x660E;)&#x90FD;&#x662F;&#x6709;&#x6548;&#x7684;&#x3002;</p>
+<h1 id="polygon">polygon()</h1>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">polygon</span>(0 0, 0 200px, 300px 600px);
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x4EFB;&#x4F55;&#x6709;&#x4E09;&#x4E2A;&#x6216;&#x4E09;&#x4E2A;&#x4EE5;&#x4E0A;&#x9876;&#x70B9;&#x7684;&#x5F62;&#x72B6;,&#x4F8B;&#x5982;:</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_4e5420d8c1a2766b25dd3c98f684bf9c" src="//codepen.io/css-tricks/embed/4e5420d8c1a2766b25dd3c98f684bf9c?height=268&amp;theme-id=1&amp;slug-hash=4e5420d8c1a2766b25dd3c98f684bf9c&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 4" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;,&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5C06;&#x662F;&#x52A8;&#x753B;&#xFF0C;&#x5F53;&#x4F60;&#x58F0;&#x660E;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x65F6;&#x9700;&#x8981;&#x76F8;&#x540C;&#x6570;&#x91CF;&#x7684;&#x9876;&#x70B9;:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">polygon</span>(0 0, 100% 0, 100% 100%, 0 100%);
+  <span class="hljs-attribute">transition</span>: shape-outside <span class="hljs-number">1s</span>;
+}
+<span class="hljs-selector-class">.element</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">polygon</span>(0 0, 100% 50%, 100% 50%, 0 100%);
+}
+</code></pre>
+<h1 id="inset">inset()</h1>
+<pre><code class="lang-css"><span class="hljs-selector-class">.element</span> {
+  <span class="hljs-attribute">shape-outside</span>: <span class="hljs-built_in">inset</span>(100px 100px 100px 100px 10px);
+  <span class="hljs-comment">/* shape-outside: inset(top right bottom left border-radius); */</span>
+}
+</code></pre>
+<p><code>inset()</code>&#x662F;&#x4E00;&#x4E2A;&#x7ED8;&#x5236;&#x65B9;&#x5F62;&#x5F62;&#x72B6;&#x7684;&#x51FD;&#x6570;,&#x5B83;&#x9700;&#x8981;&#x4E94;&#x4E2A;&#x53C2;&#x6570;,&#x4F46;&#x7B2C;&#x4E94;&#x53C2;&#x6570;,<code>border-radius</code> &#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;&#x5176;&#x4ED6;&#x53C2;&#x6570;&#x504F;&#x79FB;&#x91CF;&#x4ECE; <code>.element</code>&#x7684;&#x8FB9;&#x7F18;&#x5411;&#x5185;:</p>
+<div class="cp_embed_wrapper resizable" style="height: 268px;">
+<iframe id="cp_embed_b2da5018d8f20ac3a2ccc26edb724db6" src="//codepen.io/css-tricks/embed/b2da5018d8f20ac3a2ccc26edb724db6?height=268&amp;theme-id=1&amp;slug-hash=b2da5018d8f20ac3a2ccc26edb724db6&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="268" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="CodePen Embed 1" class="cp_embed_iframe " style="width: 100%; overflow: hidden; height: 100%;"></iframe>
+</div>
+
+<p>&#x4E0A;&#x9762;&#x6709;&#x4E00;&#x4E2A;200px&#x5BBD;&#x3001;200px&#x9AD8;&#x7684;&#x5143;&#x7D20;,&#x9664;&#x4E86;&#x5DE6;&#x8FB9;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x5176;&#x4ED6;&#x5404;&#x4E2A;&#x65B9;&#x5411;&#x504F;&#x79FB;50px&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;div&#x867D;&#x7136;&#x5EF6;&#x4F38;&#x5230;&#x9876;&#x90E8;,&#x4F46;&#x4E0A;&#x9762;&#x7684;&#x6587;&#x672C;&#x5C06;&#x56F4;&#x7ED5;&#x5F62;&#x72B6;&#x3002;</p>
+<h1 id="related-properties">Related properties</h1>
+<ul>
+ <li><a href="https://css-tricks.com/almanac/properties/c/clip/" target="_blank">clip-path</a></li>
+</ul>
+
+<h1 id="other-resoutces">Other resoutces</h1>
+<ul>
+ <li><a href="http://www.w3.org/TR/css-shapes/#funcdef-ellipse" target="_blank">CSS Shapes on W3C</a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside" target="_blank">shape-outside on MDN</a></li>
+ <li><a href="http://www.html5rocks.com/en/tutorials/shapes/getting-started" target="_blank">Getting started with CSS Shapes</a></li>
+ <li><a href="http://alistapart.com/article/css-shapes-101" target="_blank">CSS Shapes on A List Apart</a></li>
+</ul>
+
+<h1 id="browser-support">Browser support</h1>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x6570;&#x636E;&#x6765;&#x81EA;<a href="http://caniuse.com/#feat=css-shapes" target="_blank">Caniuse</a>,&#x90A3;&#x91CC;&#x6709;&#x66F4;&#x591A;&#x7684;&#x7EC6;&#x8282;&#x3002;&#x4EE5;&#x4E0B;&#x6570;&#x636E;&#x8868;&#x660E;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;,&#x7248;&#x672C;&#x548C;&#x7279;&#x6027;&#x3002;</p>
+<div class="caniuse"><div class="caniuse-header"><h4 id="article-header-id-9" class="has-header-link"><a class="article-headline-link" href="#article-header-id-9">#</a>Desktop</h4><table class="browser-support-table"><thead><tr><th class="chrome"><span>Chrome</span></th><th class="opera"><span>Opera</span></th><th class="firefox"><span>Firefox</span></th><th class="ie"><span>IE</span></th><th class="edge"><span>Edge</span></th><th class="safari"><span>Safari</span></th></tr></thead><tbody><tr><td class="y yep" title="Chrome - " data-browser-name="Chrome"><span class="caniuse-agents-version version">37</span></td><td class="y yep" title="Opera - " data-browser-name="Opera"><span class="caniuse-agents-version version">24</span></td><td class="n nope" title="Firefox - " data-browser-name="Firefox"><span class="caniuse-agents-version version">No</span></td><td class="n nope" title="IE - " data-browser-name="IE"><span class="caniuse-agents-version version">No</span></td><td class="n nope" title="Edge - " data-browser-name="Edge"><span class="caniuse-agents-version version">No</span></td><td class="y yep" title="Safari - " data-browser-name="Safari"><span class="caniuse-agents-version version">7.1*</span></td></tr></tbody></table></div><div class="caniuse-section"><h4 id="article-header-id-10" class="has-header-link"><a class="article-headline-link" href="#article-header-id-10">#</a>Mobile / Tablet</h4><table class="browser-support-table"><thead><tr><th class="ios_saf"><span>iOS Safari</span></th><th class="op_mob"><span>Opera Mobile</span></th><th class="op_mini"><span>Opera Mini</span></th><th class="android"><span>Android</span></th><th class="and_chr"><span>Android Chrome</span></th><th class="and_ff"><span>Android Firefox</span></th></tr></thead><tbody><tr><td class="y yep" title="iOS Safari - " data-browser-name="iOS Safari"><span class="caniuse-agents-version version">8*</span></td><td class="y yep" title="Opera Mobile - " data-browser-name="Opera Mobile"><span class="caniuse-agents-version version">37</span></td><td class="n nope" title="Opera Mini - " data-browser-name="Opera Mini"><span class="caniuse-agents-version version">No</span></td><td class="y yep" title="Android - " data-browser-name="Android"><span class="caniuse-agents-version version">62</span></td><td class="y yep" title="Android Chrome - " data-browser-name="Android Chrome"><span class="caniuse-agents-version version">64</span></td><td class="n nope" title="Android Firefox - " data-browser-name="Android Firefox"><span class="caniuse-agents-version version">No</span></td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../1.1/es.html" class="navigation navigation-prev " aria-label="Previous page: 1.1 Iron Man’s Arc Reactor Using CSS3 Transforms and Animations">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="es.html" class="navigation navigation-next " aria-label="Next page: 1.2 shape-outside">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.2 CSS属性：shape-outside","level":"1.2.3","depth":2,"next":{"title":"1.2 shape-outside","level":"1.2.4","depth":2,"path":"CSS-TRICKS/1.2/es.md","ref":"CSS-TRICKS/1.2/es.md","articles":[]},"previous":{"title":"1.1 Iron Man’s Arc Reactor Using CSS3 Transforms and Animations","level":"1.2.2","depth":2,"path":"CSS-TRICKS/1.1/es.md","ref":"CSS-TRICKS/1.1/es.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CSS-TRICKS/1.2/ch.md","mtime":"2018-05-01T04:35:15.151Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-01T03:25:46.795Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
