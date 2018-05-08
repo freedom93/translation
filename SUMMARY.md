@@ -9,4 +9,6 @@
   * [1.2 shape-outside](CSS-TRICKS/1.2/es.md)
 * [2.JS-TRICKS](JS-TRICKS/README.md)
 * [3.HTML-TRICKS](HTML-TRICKS/README.md)
+  * [1.1 CSS环境变量](HTML-TRICKS/1.1/ch.md)
+  * [1.1 CSS Environment Variables](HTML-TRICKS/1.1/es.md)
 * [4.OTHER](OTHER/README.md)
