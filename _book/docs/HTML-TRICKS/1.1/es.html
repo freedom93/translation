@@ -1,0 +1,443 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.1 CSS Environment Variables · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../OTHER/" />
+    
+    
+    <link rel="prev" href="ch.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    FE translation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../CSS-TRICKS/">
+            
+                <a href="../../CSS-TRICKS/">
+            
+                    
+                    1.CSS-TRICKS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../CSS-TRICKS/1.1/ch.html">
+            
+                <a href="../../CSS-TRICKS/1.1/ch.html">
+            
+                    
+                    1.1 使用CSS变换和动画实现钢铁侠电弧反应堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../CSS-TRICKS/1.1/es.html">
+            
+                <a href="../../CSS-TRICKS/1.1/es.html">
+            
+                    
+                    1.1 Iron Man’s Arc Reactor Using CSS3 Transforms and Animations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../CSS-TRICKS/1.2/ch.html">
+            
+                <a href="../../CSS-TRICKS/1.2/ch.html">
+            
+                    
+                    1.2 CSS属性：shape-outside
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../CSS-TRICKS/1.2/es.html">
+            
+                <a href="../../CSS-TRICKS/1.2/es.html">
+            
+                    
+                    1.2 shape-outside
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../JS-TRICKS/">
+            
+                <a href="../../JS-TRICKS/">
+            
+                    
+                    2.JS-TRICKS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    3.HTML-TRICKS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="ch.html">
+            
+                <a href="ch.html">
+            
+                    
+                    1.1 CSS环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="es.html">
+            
+                <a href="es.html">
+            
+                    
+                    1.1 CSS Environment Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../OTHER/">
+            
+                <a href="../../OTHER/">
+            
+                    
+                    4.OTHER
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.1 CSS Environment Variables</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <article id="post-270572" role="main" class="instapaper_body h-entry e-content">
+
+    <header class="mega-header">
+
+      <h1 class="p-name" id="
+----------------css-environment-variables--------------">
+                CSS Environment Variables              </h1>
+
+    </header>
+
+    <p class="author-byline">
+
+      <span class="author-and-date">
+                By
+        <a href="https://css-tricks.com/author/chriscoyier/" target="_blank">
+                    <span class="p-author">
+            Chris Coyier          </span>
+        </a>
+                <span class="slashes">On</span>
+        <time datetime="2018-05-04" class="dt-published">
+          May 4, 2018        </time>
+      </span>
+
+              <span class="byline-tags">
+          <svg class="icon-tag" width="12px" height="12px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-tag"/></svg><a href="https://css-tricks.com/tag/custom-properties/" rel="tag" target="_blank">custom properties</a>, <a href="https://css-tricks.com/tag/environment-variables/" rel="tag" target="_blank">environment variables</a>        </span>
+
+    </p>
+
+    <div class="article-content">
+
+
+      <p>We were all introduced to the <code>env()</code> function in CSS when all that drama about <a href="https://css-tricks.com/the-notch-and-css/" target="_blank">&quot;The Notch&quot; and the iPhone X</a> was going down. The way that Apple landed on helping us move content away from those &quot;unsafe&quot; areas was to provide us essentially hard-coded variables to use:</p>
+<pre rel="CSS" class=" language-css"><code class=" language-css"><span class="hljs-selector-tag">padding</span>: 
+  <span class="hljs-selector-tag">env</span>(<span class="hljs-selector-tag">safe-area-inset-top</span>) 
+  <span class="hljs-selector-tag">env</span>(<span class="hljs-selector-tag">safe-area-inset-right</span>) 
+  <span class="hljs-selector-tag">env</span>(<span class="hljs-selector-tag">safe-area-inset-bottom</span>) 
+  <span class="hljs-selector-tag">env</span>(<span class="hljs-selector-tag">safe-area-inset-left</span>);</code></pre>
+<p>Uh ok! Weird! Now, nine months later, <a href="https://drafts.csswg.org/css-env-1/" target="_blank">an &quot;Unofficial Proposal Draft&quot; for <code>env()</code></a> has landed. This is how specs work, as I understand it. Sometimes browser vendors push forward with stuff they need, and then it&apos;s standardized. It&apos;s not always waiting around for standards bodies to invent things and then browser vendors implementing those things.</p>
+<p><span id="more-270572"></span></p>
+<p>Are environment variables something to get excited about? Heck yeah! In a sense, they are like a more-limited version of <a href="https://css-tricks.com/guides/css-custom-properties/" target="_blank">CSS Custom Properties</a>, but that means they can be potentially used for <em>more things</em>. </p>
+<twitterwidget class="twitter-tweet twitter-tweet-rendered" id="twitter-widget-1" style="position: static; visibility: visible; display: block; transform: rotate(0deg); max-width: 100%; width: 500px; min-width: 220px; margin-top: 10px; margin-bottom: 10px;" data-tweet-id="990569495432450048"></twitterwidget>
+<twitterwidget class="twitter-tweet twitter-tweet-rendered" id="twitter-widget-2" style="position: static; visibility: visible; display: block; transform: rotate(0deg); max-width: 100%; width: 500px; min-width: 220px; margin-top: 10px; margin-bottom: 10px;" data-tweet-id="991088767522951168"></twitterwidget>
+<p>Eric also points out some very awesome early thinking:</p>
+<blockquote>
+<p>ISSUE 4 - Define the full set of places <code>env()</code> can be used.</p>
+<ul>
+<li>Should be able to replace any subset of MQ syntax, for example.</li>
+<li>Should be able to replace selectors, maybe?</li>
+<li>Should it work on a rule level, so you can insert arbitrary stuff into a rule, like reusing a block of declarations?</li>
+</ul>
+</blockquote>
+<p>Probably still changeable-with-JavaScript as well. I would think the main reason CSS Custom Properties <em>don&apos;t</em> work with media queries and selectors and such is because they <em>do</em> work with the cascade, which opens up some very strange infinite loop logic where it makes sense CSS doesn&apos;t want to tread.</p>
+<p>If you&apos;re into the PostCSS thing, there is <a href="https://github.com/jonathantneal/postcss-env-function" target="_blank">a plugin</a>! But I&apos;d warn... the <a href="https://css-tricks.com/issue-preprocessing-css-custom-properties/" target="_blank">same issues that befall preprocessing CSS Custom Properties</a> applies here (except the first one in that article). </p>
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<div id="jp-relatedposts" class="jp-relatedposts">
+  <h3 class="jp-relatedposts-headline has-header-link" id="article-header-id-0"><a class="article-headline-link" href="#article-header-id-0">#</a><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-visual jp-relatedposts-grid "><div class="jp-relatedposts-post jp-relatedposts-post0 jp-relatedposts-post-thumbs" data-post-id="260090" data-post-format="false"><a class="jp-relatedposts-post-a" href="https://css-tricks.com/the-notch-and-css/" title="&quot;The Notch&quot; and CSS
+
+Apple&apos;s iPhone X has a screen that covers the entire face of the phone, save for a &quot;notch&quot; to make space for a camera and other various components. The result is some awkward situations for screen design, like constraining websites to a &quot;safe area&quot; and having white bars on the&#x2026;" rel="nofollow" data-origin="270572" data-position="0" target="_blank"><img class="jp-relatedposts-post-img" src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2017/09/iphonex-safari.png?resize=350%2C200&amp;ssl=1" width="350" alt="" the="" notch"="" and="" css"=""></a><h4 class="jp-relatedposts-post-title" id="the-notch-and-css"><a class="jp-relatedposts-post-a" href="https://css-tricks.com/the-notch-and-css/" title="&quot;The Notch&quot; and CSS
+
+Apple&apos;s iPhone X has a screen that covers the entire face of the phone, save for a &quot;notch&quot; to make space for a camera and other various components. The result is some awkward situations for screen design, like constraining websites to a &quot;safe area&quot; and having white bars on the&#x2026;" rel="nofollow" data-origin="270572" data-position="0" target="_blank">&quot;The Notch&quot; and CSS</a></h4><p class="jp-relatedposts-post-excerpt">Apple&apos;s iPhone X has a screen that covers the entire face of the phone, save for a &quot;notch&quot; to make space for a camera and other various components. The result is some awkward situations for screen design, like constraining websites to a &quot;safe area&quot; and having white bars on the&#x2026;</p><p class="jp-relatedposts-post-date" style="display: block;">September 16, 2017</p><p class="jp-relatedposts-post-context">In &quot;Article&quot;</p></div><div class="jp-relatedposts-post jp-relatedposts-post1 jp-relatedposts-post-nothumbs" data-post-id="241610" data-post-format="false"><a class="jp-relatedposts-post-a jp-relatedposts-post-aoverlay" href="https://css-tricks.com/intro-bedrock-wordpress/" title="An Intro to Bedrock for WordPress
+
+The following is a guest post by Alessandro Vendruscolo, who wrote to me excited to write a guest post about a WordPress tool that I didn&apos;t know much about: Bedrock. It&apos;s not a theme, it&apos;s a way to install, configure, and manage WordPress with security and modern development practices in&#x2026;" rel="nofollow" data-origin="270572" data-position="1" target="_blank"></a><h4 class="jp-relatedposts-post-title" id="an-intro-to-bedrock-for-wordpress"><a class="jp-relatedposts-post-a" href="https://css-tricks.com/intro-bedrock-wordpress/" title="An Intro to Bedrock for WordPress
+
+The following is a guest post by Alessandro Vendruscolo, who wrote to me excited to write a guest post about a WordPress tool that I didn&apos;t know much about: Bedrock. It&apos;s not a theme, it&apos;s a way to install, configure, and manage WordPress with security and modern development practices in&#x2026;" rel="nofollow" data-origin="270572" data-position="1" target="_blank">An Intro to Bedrock for WordPress</a></h4><p class="jp-relatedposts-post-excerpt" style="max-height: 7.5em;">The following is a guest post by Alessandro Vendruscolo, who wrote to me excited to write a guest post about a WordPress tool that I didn&apos;t know much about: Bedrock. It&apos;s not a theme, it&apos;s a way to install, configure, and manage WordPress with security and modern development practices in&#x2026;</p><p class="jp-relatedposts-post-date" style="display: block;">May 17, 2016</p><p class="jp-relatedposts-post-context">In &quot;Article&quot;</p></div><div class="jp-relatedposts-post jp-relatedposts-post2 jp-relatedposts-post-thumbs" data-post-id="255312" data-post-format="false"><a class="jp-relatedposts-post-a" href="https://css-tricks.com/browserlist-good-idea/" title="Browserslist is a Good Idea
+
+As front-end developers, we&apos;re well aware that different browsers (and versions) support different web platform features. We make choices based on the support of those features balanced with what analytics tell us about what browsers our users use. For example, if our Google Analytics tell us only 0.01% of users&#x2026;" rel="nofollow" data-origin="270572" data-position="2" target="_blank"><img class="jp-relatedposts-post-img" src="https://i1.wp.com/css-tricks.com/wp-content/uploads/2017/05/browserlist-logo.png?resize=350%2C200&amp;ssl=1" width="350" alt="Browserslist is a Good Idea"></a><h4 class="jp-relatedposts-post-title" id="browserslist-is-a-good-idea"><a class="jp-relatedposts-post-a" href="https://css-tricks.com/browserlist-good-idea/" title="Browserslist is a Good Idea
+
+As front-end developers, we&apos;re well aware that different browsers (and versions) support different web platform features. We make choices based on the support of those features balanced with what analytics tell us about what browsers our users use. For example, if our Google Analytics tell us only 0.01% of users&#x2026;" rel="nofollow" data-origin="270572" data-position="2" target="_blank">Browserslist is a Good Idea</a></h4><p class="jp-relatedposts-post-excerpt">As front-end developers, we&apos;re well aware that different browsers (and versions) support different web platform features. We make choices based on the support of those features balanced with what analytics tell us about what browsers our users use. For example, if our Google Analytics tell us only 0.01% of users&#x2026;</p><p class="jp-relatedposts-post-date" style="display: block;">May 30, 2017</p><p class="jp-relatedposts-post-context">In &quot;Article&quot;</p></div></div></div>
+    </div>
+
+  </article>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ch.html" class="navigation navigation-prev " aria-label="Previous page: 1.1 CSS环境变量">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../OTHER/" class="navigation navigation-next " aria-label="Next page: 4.OTHER">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.1 CSS Environment Variables","level":"1.4.2","depth":2,"next":{"title":"4.OTHER","level":"1.5","depth":1,"path":"OTHER/README.md","ref":"OTHER/README.md","articles":[]},"previous":{"title":"1.1 CSS环境变量","level":"1.4.1","depth":2,"path":"HTML-TRICKS/1.1/ch.md","ref":"HTML-TRICKS/1.1/ch.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"HTML-TRICKS/1.1/es.md","mtime":"2018-05-08T14:13:47.038Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-08T14:18:17.157Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

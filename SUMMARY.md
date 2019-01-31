@@ -12,3 +12,4 @@
   * [1.1 CSS环境变量](HTML-TRICKS/1.1/ch.md)
   * [1.1 CSS Environment Variables](HTML-TRICKS/1.1/es.md)
 * [4.OTHER](OTHER/README.md)
+  * [图像指南](OTHER/image-guild/ch.md)
